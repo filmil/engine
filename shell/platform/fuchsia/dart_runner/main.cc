@@ -34,6 +34,8 @@ static void RegisterProfilerSymbols(const char* symbols_path,
 #endif  // !defined(DART_PRODUCT)
 
 int main(int argc, const char** argv) {
+  FML_LOG(INFO) << "HAAAANDS!!1!";
+
   async::Loop loop(&kAsyncLoopConfigAttachToCurrentThread);
 
 #if !defined(FUCHSIA_SDK)

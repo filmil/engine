@@ -66,9 +66,11 @@ def main():
 
   args = parser.parse_args()
 
-  assert os.path.exists(args.pm_bin)
-  assert os.path.exists(args.package_dir)
-  assert os.path.exists(args.signing_key)
+  assert os.path.exists(args.pm_bin), 'does not exist: %s' % args.pm_bin
+  assert os.path.exists(args.package_dir), 'does not exist: %s' % (
+      args.package_dir)
+  assert os.path.exists(args.signing_key), 'does not exist: %s' % (
+      args.signing_key)
 
   pkg_dir = args.package_dir
   if not os.path.exists(os.path.join(pkg_dir, 'meta', 'package')):
@@ -76,7 +78,7 @@ def main():
 
   manifest_file = None
   if args.manifest_file is not None:
-    assert os.path.exists(args.manifest_file)
+    assert os.path.exists(args.manifest_file), 'does not exist: %s' % args.manifest_file
     manifest_file = args.manifest_file
   else:
     manifest_file = GenerateManifest(args.package_dir)

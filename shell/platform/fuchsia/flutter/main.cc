@@ -13,6 +13,8 @@
 #include "runtime/dart/utils/tempfs.h"
 
 int main(int argc, char const* argv[]) {
+  FML_LOG(INFO) << "HAAAAnds!!!1! (flutter runner)";
+
   std::unique_ptr<async::Loop> loop(flutter_runner::MakeObservableLoop(true));
 
   std::unique_ptr<trace::TraceProviderWithFdio> provider;
